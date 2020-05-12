@@ -3,13 +3,6 @@ from collections import namedtuple
 
 from flask import Flask, render_template, redirect, url_for, request
 
-from flask_sqlalchemy import SQLAlchemy
-
-
-app = Flask(__name__)
-app.config['SQLALCHEMY_DATABASE_URI'] = 'postgres://postgres:123@localhost/py_sweater'
-db = SQLAlchemy(app)
-
 app = Flask(__name__)
 
 Message = namedtuple('Message', 'text tag')
@@ -29,7 +22,7 @@ def main():
 
 @app.route('/otzivi', methods=['GET'])
 def main1():
-    return render_template('main1.html', messages=messages)
+    return '''<img src="/static/img/1.jpg" alt="здесь должна была быть картинка, но не нашлась">'''
 
 
 @app.route('/add_message', methods=['POST'])
