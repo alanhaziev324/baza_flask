@@ -11,7 +11,7 @@ messages = []
 
 @app.route('/', methods=['GET'])
 def hello_world():
-    return render_template('index.html')
+    return render_template('index1.html')
 
 
 @app.route('/login', methods=['GET'])
